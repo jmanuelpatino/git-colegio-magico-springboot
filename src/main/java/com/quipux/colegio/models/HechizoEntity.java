@@ -16,18 +16,23 @@ public class HechizoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+    @Column(name = "nombre_hechizo", nullable = false)
     private String nombre;
+    @Column(name = "tipo_magia")
     private String tipoMagia; // Ejemplo: Fuego, Agua, Oscura
+    @Column(name = "nivel_poder")
     private Integer nivelPoder;
     
     // Getters y Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
+
     public String getTipoMagia() { return tipoMagia; }
     public void setTipoMagia(String tipoMagia) { this.tipoMagia = tipoMagia; }
+
     public Integer getNivelPoder() { return nivelPoder; }
     public void setNivelPoder(Integer nivelPoder) { this.nivelPoder = nivelPoder; }
 }
