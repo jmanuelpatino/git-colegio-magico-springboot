@@ -27,7 +27,7 @@ public class HechizoManagerImpl implements HechizoManager {
         
         // Escribe tu código aqu
 
-        if (hechizo.getNombre() == null || hechizo.getNombre().trim().isEmpty()) { // O usa getNombre() según tu modelo
+        if (hechizo.getNombre() == null || hechizo.getNombre().trim().isEmpty()) {
             throw new Exception("Nombre invalido");
         }
 
