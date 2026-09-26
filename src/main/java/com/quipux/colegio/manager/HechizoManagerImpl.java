@@ -2,9 +2,9 @@ package com.quipux.colegio.manager;
 
 import com.quipux.colegio.dao.HechizoDao;
 import com.quipux.colegio.models.HechizoEntity;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,6 +12,8 @@ import java.util.List;
 // y para que los métodos se ejecuten dentro de una transacción de base de datos.
 // PISTAS: @S... y @T...
 
+@Service
+@Transactional
 public class HechizoManagerImpl implements HechizoManager {
 
     @Autowired
@@ -24,7 +26,13 @@ public class HechizoManagerImpl implements HechizoManager {
         // 2. Si el "tipoMagia" del hechizo es "Oscura", debes lanzar una Exception con el mensaje "Magia prohibida en el colegio".
         
         // Escribe tu código aquí:
-        
+        if (hechizo.getNombre() == null || hechizo.getNombre().trim().isEmpty()) {
+            throw new Exception("Nombre invalido");
+        }
+
+        if ("Oscura".equalsIgnoreCase(hechizo.getTipoMagia().trim())) {
+            throw new Exception("Magia prohibida en el colegio");
+        }
         
         return hechizoDao.guardarHechizo(hechizo);
     }
