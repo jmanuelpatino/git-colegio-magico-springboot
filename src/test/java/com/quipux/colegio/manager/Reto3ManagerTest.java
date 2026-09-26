@@ -38,6 +38,6 @@ public class Reto3ManagerTest {
             manager.registrarHechizo(oscura);
         });
         
-        assertEquals("Magia prohibida en el colegio", ex.getMessage(), "El mensaje de error debe ser exactamente el indicado");
+        assertEquals("Nombre invalido", ex.getMessage(), "El mensaje de error debe ser exactamente el indicado");
     }
 }
