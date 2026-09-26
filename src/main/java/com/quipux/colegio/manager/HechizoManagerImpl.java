@@ -30,7 +30,7 @@ public class HechizoManagerImpl implements HechizoManager {
             throw new Exception("Nombre invalido");
         }
 
-        if ("Oscura".equalsIgnoreCase(hechizo.getTipoMagia().trim())) {
+        if (hechizo.getTipoMagia() != null && "Oscura".equals(hechizo.getTipoMagia().trim())) {
             throw new Exception("Magia prohibida en el colegio");
         }
         
