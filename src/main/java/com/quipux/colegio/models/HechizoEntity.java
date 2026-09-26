@@ -7,8 +7,14 @@ package com.quipux.colegio.models;
 // 3. El atributo 'id' debe ser la llave primaria (@I...) y autogenerada (@G...)
 // 4. El atributo 'nombre' debe mapearse a una columna (@C...) y no debe permitir nulos (nullable = false).
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "hechizos")
 public class HechizoEntity {
-    
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     private String nombre;
